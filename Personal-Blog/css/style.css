@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/* body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+    background-repeat: none;
+    object-fit: cover;
+}
+
+.container {
+    display: grid;
+    max-width: 1500px;
+    grid-template-columns: 0.4fr 0.3 fr 0.3fr;
+    grid-gap: 10px 10px;
+    column-gap: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fafafa;
+    
+
+}
+/* header styling */
+.header {
+    display:flex;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    justify-content: space-between;
+    font-size: 2em;
+    font-weight: 500;
+    font-family: "Xanh Mono", monospace;
+    background-color: rgb(93, 161, 158);
+    border-bottom: 2px solid #444;
+}
+
+.header nav {
+    display: flex;
+}
+
+.header nav ul {
+    display: flex;
+}
+
+.header nav ul li {
+    display: flex;
+    padding: 30px 30px 0px 30px;
+    
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+}
+
+.header a:hover {
+    transition: gray 0.5ms ease;
+    color: gray;
+}
+
+.header a button:hover {
+    transition: gray 0.5ms ease;
+    cursor: pointer;
+}
+
+.logo {
+    display:block;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.logo img {
+    width: 50%;
+    height: auto;
+}
+
+.login-register {
+    display: flex;
+    padding: 30px 30px 0px 30px;
+}
+
+button {
+    font-family: "Xanh Mono", monospace;
+}
+
+.login-register a {
+    display: flex;
+    padding: 5px;
+}
+
+/* sidebar styling */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 2;
+    grid-row: 2 / 6;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2.25em;
+    padding: 2em 1em;
+    background-image: url("/images/rock.jpg");
+    font-family: "Barlow Condensed", sans-serif;
+    color: #fafafa;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar h2 {
+    text-decoration: underline;
+    padding-bottom: 0.5em;
+}
+
+.sidebar ul li {
+    padding: 0.5em 0 0.5em 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.sidebar a:hover {
+    color: goldenrod;
+}
+
+/* main area styling */
+.main {
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    margin: 0 10px 0 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2em;
+}
+
+.post-card {
+    width: 100%;
+    position: relative;
+}
+
+.post-card:hover {
+    box-shadow: 5px 2px 3px #444;
+}
+
+.post-card img {
+    max-width: 100%;
+    max-height: auto;
+    z-index: 1;
+}
+
+.post-cap {
+    display: block;
+    z-index: 2;
+    width: 100%;
+    position: absolute;
+    bottom: 80%; 
+    left: 0;
+    z-index: 2;
+    margin: 0;
+    padding: 5px 0;
+    text-indent: 5px;
+    color: #fff;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* card area styling */
+.card-area {
+    grid-column: 2 / 4;
+    grid-row: 4 / 6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5px;
+    background-color: rgb(198, 199, 195);
+}
+
+.card {
+    flex: 0 1 calc(25% - 1em);
+    flex-wrap: wrap;
+    display: inline;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 2%;
+    background-color: #fafafa;
+}
+
+.card:hover {
+    box-shadow: 2px 2px 3px #444;
+}
+
+.thumb {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 2%;
+
+}
+
+.card-cap {
+    font-family: "Permanent Marker", cursive;
+    font-style: normal;
+    font-size: 1em;
+}
+
+.card-cap h3 {
+    font-size: 1em;
+    text-align: center;
+}
+
+.card-cap p {
+    font-size: 80%;
+    text-align: center;
+}
+
+.card-area a {
+    color: black;
+    text-decoration: none;
+}
+
+.card-area a:hover {
+    color: gray;
+}
+
+a .card:hover {
+    box-shadow: 10px 10px black;
+}
+
+/* footer styling */
+.footer {
+    display: flex;
+    grid-column: 1 / 4;
+    grid-row: 6 / 7;
+    justify-content: space-evenly;
+}
+
+.footer ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding: 20px;
+    font-size: 5em;
+}
+
+.footer li {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fa {
+    display: flex;
+    padding: 5px 10px 5px 10px;
+}
+
+/* post page styling */
+
+.main-post {
+    display: inline-grid;
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    margin: 0 10px 0 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2em;
+    background-color: rgb(157, 172, 219);
+    text-align: center;
+}
+
+.main-post text {
+    text-align: center;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.main-post h1 {
+    padding: 0.5em 0 0.5em 0;
+    font-size: 2em;
+}
+
+.main-post h2 {
+    text-decoration: underline;
+    padding: 0.5em 0 0.5em 0;
+    color: rgb(107, 70, 0);
+}
+
+.main-post p {
+    text-align: left;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.main-pic {
+    display: inline;
+    grid-column: 2 / 4;
+    max-height: 750px;
+    border-radius: 2%;
+    max-width: 100%;
+}
+
+
+.author-info {
+    display: flex;
+    /* grid-column: 2 / 3 */;
+    font-family: "Xanh Mono", monospace;
+    font-size: 0.6em;
+    justify-content: center;
+    padding: 0.5em 0 0.5em 0;
+    color: honeydew;
+    font-weight: bolder;
+    border-top: 2px solid ivory;
+    border-bottom: 2px solid ivory;
+    background: gray;
+    text-align: left;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-style: groove;
+    margin: 0 0 0 2em;
+    border-color: ivory;
+}
+
+@media screen and (max-width: 480px) {
+
+    .container {
+
+    }
+
+}
