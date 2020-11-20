@@ -329,6 +329,7 @@ a .card:hover {
     border-color: ivory;
 }
 
+/* media query break points */
 @media screen and (max-width: 480px) {
 
     .container {
@@ -382,6 +383,8 @@ a .card:hover {
         font-size: 1.25em;
         margin: 0;
     }
+
+}
 
 @media screen and (max-width: 768px) {
 
