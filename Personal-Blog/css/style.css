@@ -289,35 +289,30 @@ a .card:hover {
 /* post page styling */
 
 .main-post {
-    display: inline-grid;
+    display: grid;
     grid-column: 2 / 4;
     grid-row: 2 / 4;
     margin: 0 10px 0 0;
     font-family: "Courier New", Courier, monospace;
     font-size: 2em;
-    background-color: rgb(157, 172, 219);
     text-align: center;
 }
 
-.main-post text {
-    text-align: center;
-    padding: 0.5em 0 0.5em 0;
-}
-
-.main-post h1 {
+.main-post-h1 {
     padding: 0.5em 0 0.5em 0;
     font-size: 2em;
 }
 
-.main-post h2 {
+.main-post-h2 {
     text-decoration: underline;
-    padding: 0.5em 0 0.5em 0;
+    padding: 1em 0 1em 0;
     color: rgb(107, 70, 0);
 }
 
-.main-post p {
+.main-post-p {
     text-align: left;
-    padding: 0.5em 0.5em 0.5em 0.5em;
+    text-indent: 2em;
+    padding: 1em 0 1em 0;
 }
 
 .main-pic {
