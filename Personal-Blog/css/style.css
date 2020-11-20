@@ -26,9 +26,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-color: #fafafa;
-    
-
 }
+
 /* header styling */
 .header-container {
     display: grid;
@@ -100,6 +99,12 @@ button {
 }
 
 /* sidebar styling */
+.sidebar-container {
+    background-image: url("../images/rock.jpg");
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -136,6 +141,11 @@ button {
 }
 
 /* main area styling */
+.main-container {
+    display: grid;
+    grid-column: 2 / 4;
+}
+
 .main {
     display: grid;
     grid-column: 2 / 4;
@@ -178,6 +188,11 @@ button {
 }
 
 /* card area styling */
+.card-area-container {
+    grid-row: 4 / 6;
+    grid-column: 1 / 4;
+}
+
 .card-area {
     grid-column: 2 / 4;
     grid-row: 4 / 6;
@@ -239,6 +254,12 @@ a .card:hover {
 }
 
 /* footer styling */
+.footer-container {
+    display: grid;
+    grid-column: 1 / 4;
+    grid-row: 6 / 7;
+}
+
 .footer {
     display: flex;
     grid-column: 1 / 4;
@@ -367,6 +388,7 @@ a .card:hover {
         display: flex;
         font-size: 0.75em;
     }
+    
     .main-container {
         display: grid;
         grid-column: 2 / 4;
@@ -389,8 +411,14 @@ a .card:hover {
     }
 
     .footer-container {
+        display: grid;
         grid-column: 1 / 4;
         grid-row: 6 / 7;
+    }
+
+    .footer-ul {
+        padding: 5px;
+        font-size: 2em;
     }
 
 }
