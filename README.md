@@ -1,2 +1,2 @@
 # Udacity_GitHub_Repo
- Udacity Projects
+ These are projects that I'm working on for Udacity.
