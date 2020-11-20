@@ -393,7 +393,7 @@ a .card:hover {
     }
         
     .header {
-        flex-direction: column;
+        flex-direction: flex;
         font-size: 1em;
     }
     
