@@ -20,7 +20,7 @@ body {
 .container {
     display: grid;
     max-width: 1500px;
-    grid-template-columns: 0.4fr 0.3 fr 0.3fr;
+    grid-template-columns: 1fr;
     grid-gap: 10px 10px;
     column-gap: 5px;
     margin-left: auto;
@@ -40,7 +40,7 @@ body {
     border-bottom: 2px solid #444;
 }
 
-.header nav {
+.header .navbar {
     display: flex;
 }
 
