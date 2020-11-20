@@ -19,7 +19,7 @@ body {
 
 .container {
     display: grid;
-    max-width: 1500px;
+    max-width: 1200px;
     grid-template-columns: 0.4fr 0.3fr 0.3fr;
     grid-gap: 10px 10px;
     column-gap: 5px;
@@ -108,12 +108,9 @@ button {
 .sidebar {
     display: flex;
     flex-direction: column;
-    grid-column: 1 / 2;
-    grid-row: 2 / 6;
     font-family: "Courier New", Courier, monospace;
     font-size: 2.25em;
     padding: 2em 1em;
-    background-image: url("../images/rock.jpg");
     font-family: "Barlow Condensed", sans-serif;
     color: #fafafa;
 }
@@ -262,12 +259,10 @@ a .card:hover {
 
 .footer {
     display: flex;
-    grid-column: 1 / 4;
-    grid-row: 6 / 7;
     justify-content: space-evenly;
 }
 
-.footer ul {
+.footer-ul {
     display: flex;
     list-style-type: none;
     justify-content: space-evenly;
@@ -275,7 +270,7 @@ a .card:hover {
     font-size: 5em;
 }
 
-.footer li {
+.footer-li {
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -388,11 +383,18 @@ a .card:hover {
         display: grid;
         grid-column: 2 / 4;
     }
+
     .main {
         display: grid;
-        grid-row: 3 / 4;
+        grid-row: 2 / 4;
         grid-column: auto;
         font-size: 0.6em;
+    }
+
+    .main-post {
+        display:grid;
+        grid-column: 2 / 4;
+        grid-row; 2 / 4;
     }
 
     .card-area-container {
@@ -413,7 +415,7 @@ a .card:hover {
 
     .footer-ul {
         padding: 5px;
-        font-size: 2em;
+        font-size: 1em;
     }
 
 }
@@ -421,7 +423,7 @@ a .card:hover {
 
 
 
-
+/*
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
@@ -596,3 +598,5 @@ a .card:hover {
     }
 
 }
+
+*/
