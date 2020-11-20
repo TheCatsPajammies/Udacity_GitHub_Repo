@@ -330,7 +330,7 @@ a .card:hover {
 }
 
 /* media query break points */
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
 
     .container {
         display: inline-grid;
@@ -386,7 +386,7 @@ a .card:hover {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
 
     .container {
         display: inline-grid;
@@ -440,6 +440,64 @@ a .card:hover {
 
     body {
         background-color: black;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .container {
+        display: inline-grid;
+    }
+        
+    .header {
+        flex-direction: column;
+        font-size: 1.5em;
+    }
+    
+    .sidebar {
+        font-size: 1.75em;
+    }
+    
+    .main {
+        font-size: 1em;
+        margin: 0px;
+    }
+    
+    .post-cap {
+        position: absolute;
+        bottom: 60%;
+    }
+    
+    .card-area {
+        margin: 0px;
+    }
+    
+    .card-cap {
+        font-size: 0.75em;
+    }
+    
+    .card {
+        flex: 0 1 calc(20% - 1em);
+        padding: 1px;
+        margin: 1px;
+    }
+    
+    .post-card {
+        max-width: 100%;
+    }
+    
+    .footer ul {
+        font-size: 2.5em;
+    }
+    
+    .main-post {
+        font-size: 1.25em;
+        margin: 0;
+    }
+
+    body {
+        background-color: gray;
     }
 
 }
