@@ -329,13 +329,115 @@ a .card:hover {
     border-color: ivory;
 }
 
-/* TODO: add breakpoints 
 @media screen and (max-width: 480px) {
 
     .container {
-
+        display: inline-grid;
+        grid-gap: 0px;
+        column-gap: 0px;
+    }
+    
+    .header {
+        flex-direction: column;
+        font-size: 1.5em;
     }
 
-}
+    .sidebar {
+        font-size: 1em;
+    }
 
-*/
+    .main {
+        font-size: 0.5em;
+        margin: 0px;
+    }
+
+    .post-cap {
+        position: absolute;
+        bottom: 50%;
+    }
+
+    .card-area {
+        margin: 0px;
+    }
+
+    .card-cap {
+        font-size: 0.5em;
+    }
+
+    .card {
+        flex: 0 1 calc(20% - 1em);
+        padding: 1px;
+        margin: 1px;
+    }
+
+    .post-card {
+        max-width: 100%;
+    }
+
+    .footer ul {
+        font-size: 2.5em;
+    }
+
+    .main-post {
+        font-size: 1.25em;
+        margin: 0;
+    }
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        display: inline-grid;
+    }
+        
+    .header {
+        flex-direction: column;
+        font-size: 1.5em;
+    }
+    
+    .sidebar {
+        font-size: 1.75em;
+    }
+    
+    .main {
+        font-size: 1em;
+        margin: 0px;
+    }
+    
+    .post-cap {
+        position: absolute;
+        bottom: 50%;
+    }
+    
+    .card-area {
+        margin: 0px;
+    }
+    
+    .card-cap {
+        font-size: 0.75em;
+    }
+    
+    .card {
+        flex: 0 1 calc(20% - 1em);
+        padding: 1px;
+        margin: 1px;
+    }
+    
+    .post-card {
+        max-width: 100%;
+    }
+    
+    .footer ul {
+        font-size: 2.5em;
+    }
+    
+    .main-post {
+        font-size: 1.25em;
+        margin: 0;
+    }
+
+
+
+
+
+
+}
