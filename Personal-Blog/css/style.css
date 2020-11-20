@@ -344,7 +344,7 @@ a .card:hover {
 }
 
 /* media query break points */
-@import url(style-480.css) (max-width:480px)
+@import url("style-480.css") (max-width:480px)
 
 /*
 
