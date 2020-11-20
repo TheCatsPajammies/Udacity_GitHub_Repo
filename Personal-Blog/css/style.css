@@ -32,8 +32,6 @@ body {
 /* header styling */
 .header {
     display:flex;
-    grid-column: 1 / 4;
-    grid-row: 1 / 2;
     justify-content: space-between;
     font-size: 2em;
     font-weight: 500;
