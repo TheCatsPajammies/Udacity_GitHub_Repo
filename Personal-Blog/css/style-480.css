@@ -1,0 +1,130 @@
+/* style sheet for max-width 480px */
+.container {
+    display: grid;
+    grid-gap: 10px 10px;
+    grid-template-columns: 0.4fr 0.3fr 0.3fr;
+    grid-template-rows: auto;
+    background-color: #fafafa;
+}
+
+.header-container {
+    display: grid;
+    grid-column: 1 / 4;
+}
+
+.header {
+    display:flex;
+    font-size: 1em;
+}
+
+.header .navbar-li {
+    display: flex;
+    padding: 20px 5px 0px 10px;
+}
+
+.sidebar-container {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+.sidebar {
+    display: flex;
+    font-size: 0.75em;
+}
+
+.main-container {
+    display: grid;
+    grid-column: 2 / 4;
+}
+
+.main {
+    display: grid;
+    grid-row: 2 / 4;
+    grid-column: auto;
+    font-size: 0.6em;
+}
+
+.main-post {
+    display:grid;
+    grid-column: 2 / 4;
+    grid-row; 2 / 4;
+}
+
+.card-area-container {
+    grid-row: 4 / 6;
+    grid-column: 1 / 4;
+}
+
+.card-area {
+    font-size: 0.5em;
+}
+
+.footer-container {
+    display: grid;
+    grid-column: 1 / 4;
+    grid-row: 6 / 7;
+}
+
+.footer-ul {
+    padding: 5px;
+    font-size: 1em;
+}
+
+.main-post {
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    margin: 0 10px 0 0;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    font-size: 0.5em;
+}
+
+.main-post-h1 {
+    padding: 0.25em 0 0.25em 0;
+    font-size: 2em;
+}
+
+.main-post-h2 {
+    text-decoration: underline;
+    padding: 1em 0 1em 0;
+    color: rgb(107, 70, 0);
+}
+
+.main-post-p {
+    text-align: left;
+    padding: 1em 0 1em 0;
+}
+
+.main-pic {
+    display: inline;
+    grid-column: 2 / 4;
+    max-height: 300px;
+    border-radius: 2%;
+    max-width: 100%;
+}
+
+.author-info {
+    display: flex;
+    /* grid-column: 2 / 3 */;
+    font-family: "Xanh Mono", monospace;
+    font-size: 1em;
+    justify-content: center;
+    padding: 0.5em 0 0.5em 0;
+    color: honeydew;
+    font-weight: bolder;
+    border-top: 2px solid ivory;
+    border-bottom: 2px solid ivory;
+    background: gray;
+    text-align: left;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-style: groove;
+    margin: 0 0 0 2em;
+    border-color: ivory;
+}
