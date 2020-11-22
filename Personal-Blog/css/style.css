@@ -144,7 +144,7 @@ body {
 }
 
 
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 425px) {
 
     .container {
         display: grid;
@@ -204,7 +204,25 @@ body {
     }
 
     .card-area {
-        font-size: 0.5em;
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-area-a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 0 1 calc(25% - 1em);
+        flex-wrap: wrap;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 2%;
+        background-color: #fafafa;
+        display: flex;
+        flex-direction: column;
     }
 
     .footer-container {
@@ -276,7 +294,7 @@ body {
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
 
     .container {
         display: grid;
@@ -314,13 +332,13 @@ body {
     }
 
     .card-cap {
-        font-size: 0.5em;
+        font-size: 1em;
     }
 
     .card {
-        flex: 0 1 calc(20% - 1em);
-        padding: 1px;
-        margin: 1px;
+        flex: 0 1 calc(50% - 1em);
+        padding: 5px;
+        margin: 5px;
     }
 
     .post-card {

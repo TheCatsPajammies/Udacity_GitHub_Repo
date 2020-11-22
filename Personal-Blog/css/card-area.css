@@ -60,6 +60,6 @@
     color: gray;
 }
 
-.card .card-area-a:hover {
-    box-shadow: 10px 10px black;
+.card:hover {
+    box-shadow: 5px 5px 2px gray;
 }
