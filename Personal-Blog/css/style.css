@@ -170,9 +170,8 @@ body {
     }
 
     .sidebar-container {
-        display: grid;
-        grid-column: 1 / 2;
-        grid-row: 2 / 4;
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
     }
 
     .sidebar {
@@ -181,10 +180,9 @@ body {
     }
 
     .main-container {
-        display: grid;
-        grid-column: 2 / 4;
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
     }
-
     .main {
         display: grid;
         grid-row: 2 / 4;
