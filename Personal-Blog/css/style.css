@@ -237,8 +237,8 @@ body {
 
     .main-post {
         display: grid;
-        grid-column: 2 / 4;
-        grid-row: 2 / 4;
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
         margin: 0 10px 0 0;
         font-family: "Courier New", Courier, monospace;
         text-align: center;
