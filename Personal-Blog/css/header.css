@@ -1,0 +1,76 @@
+/* header styling */
+.header-container {
+    display: grid;
+    grid-column: 1 / 4;
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+    font-size: 2em;
+    font-weight: 500;
+    font-family: "Xanh Mono", monospace;
+    background-color: rgb(93, 161, 158);
+    border-bottom: 2px solid #444;
+}
+
+.header .navbar {
+    display: flex;
+}
+
+.header .navbar-ul {
+    display: flex;
+}
+
+.header .navbar-li {
+    display: flex;
+    padding: 30px 30px 0px 30px;
+}
+
+.header .navbar-li .header-a {
+    text-decoration: none;
+    color: black;
+}
+
+.header .navbar-li .header-a:hover {
+    transition: gray 0.5ms ease;
+    color: #fafafa
+}
+
+.header-button:hover {
+    transition: black 0.5ms ease;
+    cursor: pointer;
+}
+
+.logo {
+    display:block;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.logo .logo-img {
+    width: 50%;
+    height: auto;
+}
+
+.login-register {
+    display: flex;
+    padding: 30px 30px 0px 30px;
+}
+
+.login-register .login-register-a {
+    text-decoration: none;
+    padding: 3px;
+}
+
+.login-register .login-register-a:hover {
+    text-decoration: underline;
+}
+
+.header-button {
+    font-family: "Xanh Mono", monospace;
+}
+
+.header-button:hover {
+    color: grey;
+}

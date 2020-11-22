@@ -1,0 +1,30 @@
+/* footer styling */
+.footer-container {
+    display: grid;
+    grid-column: 1 / 4;
+    grid-row: 6 / 7;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding: 20px;
+    font-size: 5em;
+}
+
+.footer-li {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fa {
+    display: flex;
+    padding: 5px 10px 5px 10px;
+}

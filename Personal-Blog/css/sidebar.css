@@ -1,0 +1,39 @@
+/* sidebar styling */
+.sidebar-container {
+    background-image: url("../images/rock.jpg");
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2.25em;
+    padding: 2em 1em;
+    font-family: "Barlow Condensed", sans-serif;
+    color: #fafafa;
+}
+
+.sidebar-ul {
+    list-style-type: none;
+}
+
+.sidebar-h2 {
+    text-decoration: underline;
+    padding-bottom: 0.5em;
+}
+
+.sidebar-ul-li {
+    padding: 0.5em 0 0.5em 0;
+}
+
+.sidebar-a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.sidebar-a:hover {
+    color: goldenrod;
+}
+
