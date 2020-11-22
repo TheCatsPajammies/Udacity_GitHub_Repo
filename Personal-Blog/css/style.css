@@ -183,6 +183,7 @@ body {
         grid-column: 1 / 4;
         grid-row: 3 / 4;
     }
+
     .main {
         display: grid;
         grid-row: 2 / 4;
@@ -304,15 +305,25 @@ body {
     
     .header {
         flex-direction: flex;
-        font-size: 0.80em;
+        font-size: 0.9em;
     }
 
     button {
-        font-size: 0.7em;
+        font-size: 0.6em;
+    }
+
+    .sidebar-container {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
     }
 
     .sidebar {
         font-size: 1em;
+    }
+
+    .main-container {
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
     }
 
     .main {
