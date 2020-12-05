@@ -20,7 +20,7 @@
 // Setup NavBar variables based on element, id etc.
 // Assigns target element for .innerHTML
 // const navParent = document.querySelector('ul'); works as well, but instructions say to use id!
-const navParent = document.getElementById("navbar__menu");
+const navParent = document.getElementById("navbar__list");
 // Makes an array/list to loop over from element because all the other identifiers have unique info and class has to change based on viewport.
 const sectionList = document.querySelectorAll("section");
 
@@ -33,14 +33,14 @@ const sectionList = document.querySelectorAll("section");
 const topCheck = function(section) {
     return section.getBoundingClientRect().top;
 };
-// Removes active class from section
+// Remove active class from section if not in viewport
 const inactivatedSection = function(section) {
-    section.classList.remove('your-active-class');
+    section.classList.remove("your-active-class");
 };
-// Adds active class to section
+// Active class for section while in viewport
 const activatedSection = function(topCheck, section) {
     if (topCheck) {
-        section.classList.add('your-active-class');
+        section.classList.add("your-active-class");
     };
 };
 
@@ -56,20 +56,27 @@ const navPopulator = function() {
     let navInnerSpace = "";
     // Loops over list of section elements
     sectionList.forEach(function(section) {
-        // Adds HTML string and anchors to menu and populates li node with section data attributes
+        // Sets up HTML string to be added to target region
         navInnerSpace += `<li><a class="menu__link" href="#${section.id}">${section.dataset.nav}</a></li>`;
-    });
+    });// Places HTML into target region
     navParent.innerHTML = navInnerSpace;
 };
 
-// Add class 'active' to section when near top of viewport
+
+
+// Add class 'active' to section when near top of viewport 
 const sectionActivator = function() {
     sectionList.forEach(function(section) {
-        let checkTop = topCheck(section);
         
+        isinviewport = function() {
+            return topCheck(section) < 175 && topCheck(section) >= -225;
+        };
         
+        inactivatedSection(section);
+        activatedSection(isinviewport(), section);
     });
 };
+
 
 // Scroll to anchor ID using scrollTO event
 
