@@ -18,7 +18,7 @@
  * 
 */
 // Two variables for the navPopulator function - first one is for .innerHTML
-const nav_ul = document.getElementById("navbar__list"); // or document.querySelector('ul');
+const nav_ul = document.querySelector("ul");
 // Second variable is for list of sections to loop over
 const sectionList = document.querySelectorAll("section");
 
@@ -71,7 +71,9 @@ const sectionActivator = function () {
 };
 
 // Scroll to anchor ID using scrollTO event
-
+const anchorScroll = function () {
+    // make element list, loop over list, prevent default, add smooth scrolling....
+}
 
 /**
  * End Main Functions
@@ -82,6 +84,6 @@ const sectionActivator = function () {
 // Build menu 
 navPopulator();
 // Scroll to section on link click
-
+document.addEventListener('click', anchorScroll);
 // Set sections as active
 document.addEventListener('scroll', sectionActivator);
