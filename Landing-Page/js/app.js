@@ -29,7 +29,7 @@ const sectionList = document.querySelectorAll("section");
  * 
 */
 // Setup functions to check for distance from top and to add or remove active class.
-const topCheck = function(section) {
+const isInViewPort = function(section) {
     return section.getBoundingClientRect().top;
 };
 
@@ -37,8 +37,8 @@ const inactivated = function(section) {
     section.classList.remove('your-active-class');
 };
 
-const activated = function(topCheck, section) {
-    if (topCheck) {
+const activated = function(isInViewport, section) {
+    if (isInViewport) {
         section.classList.add('your-active-class');
     };
 };
@@ -64,7 +64,13 @@ const navPopulator = function() {
         
 
 // Add class 'active' to section when near top of viewport
-const sectionActivator = function()
+const sectionActivator = function () {
+    sectionList.forEach(function (section) {
+        viewPort = isInViewPort(section) < 400 && isInViewPort(section) >= -500;
+        inactivated(section);
+        activated(viewPort, section);
+    });
+};
 
 // Scroll to anchor ID using scrollTO event
 
@@ -78,5 +84,6 @@ const sectionActivator = function()
 // Build menu 
 navPopulator();
 // Scroll to section on link click
-sectionActivator();
+
 // Set sections as active
+document.addEventListener('scroll', sectionActivator);
