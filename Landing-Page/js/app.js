@@ -34,12 +34,12 @@ const isInViewPort = function(section) {
 };
 
 const inactivated = function(section) {
-    section.classList.remove('your-active-class');
+    section.classList.remove("your-active-class");
 };
 
 const activated = function(isInViewport, section) {
     if (isInViewport) {
-        section.classList.add('your-active-class');
+        section.classList.add("your-active-class");
     };
 };
 
@@ -53,17 +53,15 @@ const activated = function(isInViewport, section) {
 
 // build the nav
 const navPopulator = function() {
-    let _innerUl = "";
     sectionList.forEach(function(section) {
-        
-        _innerUl += `<li><a class="menu__link" href="#${section.id}">${section.dataset.nav}</li></a>`;
+        nav_ul.innerHTML += `<li><a class="menu__link" href="#${section.id}">${section.dataset.nav}</li></a>`;
     });
-    nav_ul.innerHTML = _innerUl;
-;};
+};
 
         
 
 // Add class 'active' to section when near top of viewport
+
 const sectionActivator = function () {
     sectionList.forEach(function (section) {
         viewPort = isInViewPort(section) < 400 && isInViewPort(section) >= -500;
