@@ -21,6 +21,9 @@
 const nav_ul = document.getElementById("navbar__list");
 // Second variable is for list of sections to loop over
 const sectionList = document.querySelectorAll("section");
+// Third variable is to assign scrollTo section on click
+const nav_links = document.querySelectorAll("a");
+
 
 
 
@@ -35,24 +38,14 @@ const sectionList = document.querySelectorAll("section");
  * Start Helper Functions
  * 
 */
-// Setup functions to check for distance from top and to add or remove active class.
-const isInViewPort = function(section) {
-    return section.getBoundingClientRect().top;
-};
-
-const inactivated = function(section) {
-    const nav_link = document.querySelector(`.${section.id}`);
-    section.classList.remove("your-active-class");
-    nav_link.classList.remove("active-class");
-    
-};
-
-const activated = function(isInViewport, section) {
-    if (isInViewport) {
-        const nav_link = document.querySelector(`.${section.id}`);
-        section.classList.add("your-active-class");
-        nav_link.classList.add("active-class");
-    };
+// Function checks element distance from top and returns true/boolean value 
+const isInViewport = function(element) {
+    const distance = element.getBoundingClientRect();
+    return (
+        distance.top <= 100 &&
+        distance.left >= 0 &&
+        distance.bottom >= 100 &&
+        distance.right <= (window.innerWidth || document.documentElement.clientWidth));
 }
 
 /**
@@ -68,15 +61,20 @@ const navPopulator = function() {
 }
 
 
-// Add class 'active' to section when near top of viewport
+// Add class 'active' to section and to list items/anchors when section is near top of viewport
 
 const sectionActivator = function () {
     sectionList.forEach(function (section) {
-        viewPort = isInViewPort(section) < 400 && isInViewPort(section) >= -500;
-        inactivated(section);
-        activated(viewPort, section);
-    });
-};
+        const nav_link = document.querySelector(`.${section.id}`);
+        if (isInViewport(section)) {
+            section.classList.add("your-active-class");
+            nav_link.classList.add("active-class");
+        } else {
+            section.classList.remove("your-active-class");
+            nav_link.classList.remove("active-class");
+        }
+    })
+}
 
 
 
