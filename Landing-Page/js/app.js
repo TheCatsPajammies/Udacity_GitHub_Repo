@@ -18,9 +18,16 @@
  * 
 */
 // Two variables for the navPopulator function - first one is for .innerHTML
-const nav_ul = document.querySelector("ul");
+const nav_ul = document.getElementById("navbar__list");
 // Second variable is for list of sections to loop over
 const sectionList = document.querySelectorAll("section");
+
+
+
+
+
+
+
 
 
 /**
@@ -34,31 +41,32 @@ const isInViewPort = function(section) {
 };
 
 const inactivated = function(section) {
+    const nav_link = document.querySelector(`.${section.id}`);
     section.classList.remove("your-active-class");
+    nav_link.classList.remove("active-class");
+    
 };
 
 const activated = function(isInViewport, section) {
     if (isInViewport) {
+        const nav_link = document.querySelector(`.${section.id}`);
         section.classList.add("your-active-class");
+        nav_link.classList.add("active-class");
     };
-};
-
-
+}
 
 /**
  * End Helper Functions
  * Begin Main Functions
  * 
 */
-
-// build the nav
+ //build the nav
 const navPopulator = function() {
     sectionList.forEach(function(section) {
-        nav_ul.innerHTML += `<li><a class="menu__link" href="#${section.id}">${section.dataset.nav}</li></a>`;
+        nav_ul.innerHTML += `<li><a class="menu__link ${section.id}" href="#${section.id}">${section.dataset.nav}</a></li>`;    
     });
-};
+}
 
-        
 
 // Add class 'active' to section when near top of viewport
 
@@ -70,10 +78,10 @@ const sectionActivator = function () {
     });
 };
 
+
+
 // Scroll to anchor ID using scrollTO event
-const anchorScroll = function () {
-    // make element list, loop over list, prevent default, add smooth scrolling....
-}
+
 
 /**
  * End Main Functions
@@ -84,6 +92,12 @@ const anchorScroll = function () {
 // Build menu 
 navPopulator();
 // Scroll to section on link click
-document.addEventListener('click', anchorScroll);
+
 // Set sections as active
-document.addEventListener('scroll', sectionActivator);
+document.addEventListener("scroll", sectionActivator)
+  
+
+
+
+
+
