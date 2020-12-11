@@ -18,19 +18,11 @@
  * 
 */
 // Two variables for the navPopulator function - first one is for .innerHTML
-const nav_ul = document.getElementById("navbar__list");
+const navUl = document.getElementById("navbar__list");
 // Second variable is for list of sections to loop over
 const sectionList = document.querySelectorAll("section");
 // Third variable is to assign scrollTo section on click
-const nav_links = document.querySelectorAll("a");
-
-
-
-
-
-
-
-
+const navLinks = document.querySelectorAll("a");
 
 
 /**
@@ -38,7 +30,7 @@ const nav_links = document.querySelectorAll("a");
  * Start Helper Functions
  * 
 */
-// Function checks element distance from top and returns true/boolean value 
+// isInViewport checks element distance from top and returns true/boolean value 
 const isInViewport = function(element) {
     const distance = element.getBoundingClientRect();
     return (
@@ -56,22 +48,21 @@ const isInViewport = function(element) {
  //build the nav
 const navPopulator = function() {
     sectionList.forEach(function(section) {
-        nav_ul.innerHTML += `<li><a class="menu__link ${section.id}" href="#${section.id}">${section.dataset.nav}</a></li>`;    
+        navUl.innerHTML += `<li><a class="menu__link ${section.id}" href="#${section.id}">${section.dataset.nav}</a></li>`;    
     });
 }
 
 
 // Add class 'active' to section and to list items/anchors when section is near top of viewport
-
 const sectionActivator = function () {
     sectionList.forEach(function (section) {
-        const nav_link = document.querySelector(`.${section.id}`);
+        const navLink = document.querySelector(`.${section.id}`);
         if (isInViewport(section)) {
             section.classList.add("your-active-class");
-            nav_link.classList.add("active-class");
+            navLink.classList.add("active-class");
         } else {
             section.classList.remove("your-active-class");
-            nav_link.classList.remove("active-class");
+            navLink.classList.remove("active-class");
         }
     })
 }

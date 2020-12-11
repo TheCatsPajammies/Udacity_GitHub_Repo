@@ -18,12 +18,17 @@ body {
     color: #fff;
 }
 
+.main-hero {
+    background-image: url("./images/spoopy.jpg");
+}
+
 
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
     margin: 2em 1rem;
+    text-align: center;
 }
 
 @media only screen and (min-width: 35em){
