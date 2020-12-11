@@ -18,8 +18,8 @@ body {
     color: #fff;
 }
 
-.main-hero {
-    background-image: url("./images/spoopy.jpg");
+header {
+    background-image: url("/images/spoopy.jpg");
 }
 
 
