@@ -17,12 +17,13 @@
  * Define Global Variables
  * 
 */
-// Two variables for the navPopulator function - first one is for .innerHTML
+// Two variables for the navPopulator function - first one is for .innerHTML/appendChild
 const navUl = document.getElementById("navbar__list");
 // Second variable is for list of sections to loop over
 const sectionList = document.querySelectorAll("section");
-// Third variable is to assign scrollTo section on click
-const navLinks = document.querySelectorAll("a");
+
+
+
 
 
 /**
@@ -31,8 +32,8 @@ const navLinks = document.querySelectorAll("a");
  * 
 */
 // isInViewport checks element distance from top and returns true/boolean value 
-const isInViewport = function(element) {
-    const distance = element.getBoundingClientRect();
+const isInViewport = function(elem) {
+    const distance = elem.getBoundingClientRect();
     return (
         distance.top <= 100 &&
         distance.left >= 0 &&
@@ -43,15 +44,41 @@ const isInViewport = function(element) {
 /**
  * End Helper Functions
  * Begin Main Functions
- * 
-*/
+ * // original code - didn't allow for event listener so I had to break it down and add the event listener to <li> instead.
+*/ // navUl.innerHTML += `<li><a class="menu__link ${section.id}" href="#${section.id}">${section.dataset.nav}</a></li>`;
  //build the nav
-const navPopulator = function() {
+// I ended up using this code because it worked the best with the parameters of the assignment
+ const navPopulator = function() {
     sectionList.forEach(function(section) {
-        navUl.innerHTML += `<li><a class="menu__link ${section.id}" href="#${section.id}">${section.dataset.nav}</a></li>`;    
+        let intermediate = document.createElement("li");
+        let scroll_target = document.getElementById(section.id);
+        intermediate.className = `menu__link ${section.id}`;
+        intermediate.innerHTML = `${section.dataset.nav}`;
+        intermediate.addEventListener('click', function () {
+            scroll_target.scrollIntoView({ behavior: "smooth", block: "start"})
+        })
+        navUl.appendChild(intermediate);
     });
 }
 
+/* Couldn't get this version to work because I wanted to attach the event listener to the <a> tag - any advice??
+const navPopulator = function() {
+    sectionList.forEach(function(section) {
+        let intermediate = document.createElement("li");
+        let scroll_target = document.getElementById("section");
+        let intermediate_2 = document.createElement("a");
+            intermediate_2.className = `class="menu__link ${section.id}`;
+            intermediate_2.href = `#${section.id}`;
+            intermediate_2.innerHTML = `${section.dataset.nav}`;
+            intermediate_2.addEventListener('click', function () {
+                scroll_target.scrollIntoView({ behavior: "smooth", block: "start"});
+        })
+        intermediate.appendChild(intermediate_2);
+        console.log(intermediate.appendChild(intermediate_2));
+        navUl.appendChild(intermediate.appendChild(intermediate_2));
+    });
+}
+*/
 
 // Add class 'active' to section and to list items/anchors when section is near top of viewport
 const sectionActivator = function () {
@@ -69,7 +96,7 @@ const sectionActivator = function () {
 
 
 
-// Scroll to anchor ID using scrollTO event
+
 
 
 /**
@@ -78,14 +105,15 @@ const sectionActivator = function () {
  * 
 */
 
-// Build menu 
-navPopulator();
+// Build menu
+// Scroll to anchor ID using scrollTO event
 // Scroll to section on link click
+navPopulator();
+
 
 // Set sections as active
-document.addEventListener("scroll", sectionActivator)
-  
-
+document.addEventListener("scroll", sectionActivator);
+ 
 
 
 

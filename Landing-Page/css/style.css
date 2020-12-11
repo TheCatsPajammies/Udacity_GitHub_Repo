@@ -11,17 +11,12 @@
 
 /* ---- Base Rules ---- */
 body {
-    background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    background: rgb(121, 0, 0);
+    background: linear-gradient(0deg, rgba(121, 8, 8,1) 0%, rgb(7, 7, 7) 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
 }
-
-header {
-    background-image: url("/images/spoopy.jpg");
-}
-
 
 /* Typeography General*/
 h1 {
@@ -29,12 +24,31 @@ h1 {
     font-size: 3em;
     margin: 2em 1rem;
     text-align: center;
+    font-family: 'Creepster', cursive;
 }
 
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
         margin: 2em 4rem 1em;
+    }
+
+    .navbar__menu ul {
+        padding: 0; 
+        margin: 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        display: block;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 1em;
+    }
+
+    .navbar__menu li {
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+        font-size: 1em;
     }
 }
 
@@ -72,34 +86,40 @@ section {
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    text-align: center;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
+.navbar__menu li:hover {
+    cursor: pointer;
+} 
+
 .navbar__menu li {
-    display: inline-flex;
+    display: inline-block;
     justify-content: center;
+    padding: 0px;
 }
 
 .navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
+    display: flex;
+    padding: 0.5em;
     font-weight: bold;
     text-decoration: none;
     color: #000;
 }
 
-.active-class {
-    background-color: red;
+.navbar__menu .active-class {
+    background-color: #444;
     color:#fff;
     transition: ease 0.3s all;
     border-radius: 50%;
 }
 
 .navbar__menu .menu__link:hover {
-    background:crimson;
+    background: #444;
     color: #fff;
     transition: ease 0.3s all;
 }
@@ -212,16 +232,19 @@ section:nth-of-type(3n + 1) .landing__container::after {
 section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background-image: url("../images/spoopy.jpg");
 }
 
 section.your-active-class .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
+    z-index: 2;
 }
 
 section.your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
+    z-index: 2;
 }
 
 
@@ -239,3 +262,5 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+
+
