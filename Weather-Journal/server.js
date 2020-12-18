@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 
 // Cors for cross origin allowance
 const cors = require('cors');
+const { getPackedSettings } = require('http2');
 app.use(cors());
 
 // Initialize the main project folder
@@ -27,6 +28,17 @@ const port = 3000;
 // Setup Server
 const server = app.listen(port, listening);
 function listening(){
-    console.log("server running"); 
-    console.log(`running on localhost: ${port}`);
+    console.log("The Weather-Journal Server is running, my dudes!"); 
+    console.log(`Using localhost: ${port}`);
 };
+
+// array to hold data;
+const data = [];
+// Routes
+// Get Route
+app.get('/all', function (req, res) {
+    res.send(projectData);
+})
+
+
+
