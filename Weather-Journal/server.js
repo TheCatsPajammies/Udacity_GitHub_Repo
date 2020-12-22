@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 // Cors for cross origin allowance
 const cors = require('cors');
-const { getPackedSettings } = require('http2');
+//const { getPackedSettings } = require('http2');
 app.use(cors());
 
 // Initialize the main project folder
@@ -35,10 +35,14 @@ function listening(){
 // array to hold data;
 const data = [];
 // Routes
-// Get Route
+// Get Route pulls projectData
 app.get('/all', function (req, res) {
     res.send(projectData);
 })
+// Post Route adds data to ProjectData
+app.post('/add', function (req, res) {
+    const newPost = {
 
-
+    }
+})
 
