@@ -40,17 +40,16 @@ const data = [];
 // Get Route pulls projectData and 
 app.get('/all', function (req, res) {
     res.send(projectData);
+    res.send("Hi, Paul!");
     console.log("projectData");
     console.log("get");
-})
-// Post Route adds data to projectData
-app.post('/add', function (req, res) {
-    const newPost = {
-        temperature: req.body.temperature,
-        dates: req.body.dates,
-        userResponse: req.userResponse,
-    };
-    res.send({message: "Weater data saved"});
-    projectData = newPost;
-})
+});
 
+// Post Route adds data to projectData
+app.post('/addWeather', addWeather);
+
+function addWeather (req, res) {
+    data.push(req.body);
+    console.log(data);
+    console.log("Hi, Paul!");
+};
