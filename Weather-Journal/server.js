@@ -16,12 +16,14 @@ app.use(bodyParser.json());
 
 // Cors for cross origin allowance
 const cors = require('cors');
-//const { getPackedSettings } = require('http2');
 app.use(cors());
+// const { request } = require('http');
+// const { response } = require('express');
+// const { getPackedSettings } = require('http2');
+
 
 // Initialize the main project folder
 app.use(express.static('website'));
-
 const port = 3000;
 
 
@@ -35,14 +37,20 @@ function listening(){
 // array to hold data;
 const data = [];
 // Routes
-// Get Route pulls projectData
+// Get Route pulls projectData and 
 app.get('/all', function (req, res) {
     res.send(projectData);
+    console.log("projectData");
+    console.log("get");
 })
-// Post Route adds data to ProjectData
+// Post Route adds data to projectData
 app.post('/add', function (req, res) {
     const newPost = {
-
-    }
+        temperature: req.body.temperature,
+        dates: req.body.dates,
+        userResponse: req.userResponse,
+    };
+    res.send({message: "Weater data saved"});
+    projectData = newPost;
 })
 
