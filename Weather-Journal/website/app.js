@@ -52,8 +52,8 @@ const postData = async ( url = '', data = {})=>{
     }
 };
 
-postData("/addWeather", {temp: 45, conditions: "windy"})
-postData("/addWeather", {temp: 65, conditions: "raining"})
+postData("/addWeather", {temp: 45, conditions: "windy"});
+postData("/addWeather", {temp: 65, conditions: "raining"});
 
 
 

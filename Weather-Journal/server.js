@@ -40,7 +40,6 @@ const data = [];
 // Get Route pulls projectData and 
 app.get('/all', function (req, res) {
     res.send(projectData);
-    res.send("Hi, Paul!");
     console.log("projectData");
     console.log("get");
 });
@@ -51,5 +50,4 @@ app.post('/addWeather', addWeather);
 function addWeather (req, res) {
     data.push(req.body);
     console.log(data);
-    console.log("Hi, Paul!");
 };
