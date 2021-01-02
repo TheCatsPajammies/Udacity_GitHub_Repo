@@ -26,9 +26,9 @@ const data = [];
 app.post('/add', addData);
 
 function addData(req, res) {
-  projectData['date'] = req.body.date;
-  projectData['temp'] = req.body.temp;
-  projectData['content'] = req.body.content;
+  projectData.date = req.body.date;
+  projectData.temp = req.body.temp;
+  projectData.content = req.body.content;
   res.send(projectData);
 }
 

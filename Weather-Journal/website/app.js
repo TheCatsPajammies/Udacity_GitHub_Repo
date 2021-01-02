@@ -24,7 +24,7 @@ function performAction(e) {
       console.log(clientData)
       postData('/add', { date: newDate, temp: clientData.main.temp, content })
     }).then((newData) => {
-        // call updateUI to update browser content
+        // call updateUI and update browser content
       updateUI();
     })
 }
