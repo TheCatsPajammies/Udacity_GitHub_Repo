@@ -5,8 +5,9 @@ const weatherURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '&appid=7df24cf86819600a46e06c0ae48b5484';
 
 //Get the date
-let d = new Date();
-let newDate = String((d.getMonth() + 1)).padStart(2, "0") + '/' + String(d.getDate()).padStart(2, "0") + '/' + d.getFullYear() + ' @ ' + String(d.getHours()).padStart(2, "0") + ':' + String(d.getMinutes()).padStart(2, "0");
+// I commented out default date because it doesn't refresh in session - any reason for that?
+// let d = new Date();
+// let newDate = String((d.getMonth() + 1)).padStart(2, "0") + '/' + String(d.getDate()).padStart(2, "0") + '/' + d.getFullYear() + ' @ ' + String(d.getHours()).padStart(2, "0") + ':' + String(d.getMinutes()).padStart(2, "0");
 
 // Event listener to add function to existing HTML DOM element
 document.getElementById('generate').addEventListener('click', performAction);
@@ -14,17 +15,18 @@ document.getElementById('generate').addEventListener('click', performAction);
 /* Function called by event listener */
 function performAction(e) {
   e.preventDefault();
-  // get user input values
+  // get user input values from the forms
   const zipCode = document.getElementById('zip').value;
   const content = document.getElementById('feelings').value;
 
   getWeather(weatherURL, zipCode, apiKey)
     .then(function (clientData) {
-      // add data to POST request
+      // add data to the POST request
       console.log(clientData)
-      postData('/add', { date: newDate, temp: clientData.main.temp, content })
-    }).then((newData) => {
-        // call updateUI and update browser content
+      console.log(Date())
+      postData('/add', { date: Date(), temp: clientData.main.temp, content })
+    }).then(function () {
+      // call updateUI and update client side content
       updateUI();
     })
 }
@@ -56,10 +58,9 @@ const postData = async (url = '', data = {}) => {
       content: data.content
     })
   })
-
   try {
-    const newData = await req.json();
-    return newData;
+    const tempData = await req.json();
+    return tempData;
   }
   catch (error) {
     console.log(error);
@@ -70,11 +71,11 @@ const postData = async (url = '', data = {}) => {
 const updateUI = async () => {
   const request = await fetch('/all');
   try {
-    const allData = await request.json()
+    const entryData = await request.json()
     // updates the new entry values
-    document.getElementById('date').innerHTML = allData.date;
-    document.getElementById('temp').innerHTML = allData.temp;
-    document.getElementById('content').innerHTML = allData.content;
+    document.getElementById('date').innerHTML = entryData.date;
+    document.getElementById('temp').innerHTML = entryData.temp;
+    document.getElementById('content').innerHTML = entryData.content;
   }
   catch (error) {
     console.log("error", error);
