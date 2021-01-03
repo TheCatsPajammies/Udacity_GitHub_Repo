@@ -21,6 +21,22 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
+// Setup Server
+const port = 3000;
+const server = app.listen(port, listening);
+
+function listening() {
+    console.log("The Weather-Journal Server is running, my dudes!"); 
+    console.log(`Using localhost: ${port}`);
+};
+
+// Callback function to complete GET '/all'
+app.get('/all', getData);
+
+function getData(req, res) {
+  res.send(projectData);
+}
+
 // Post Route
 const data = [];
 app.post('/add', addData);
@@ -32,18 +48,3 @@ function addData(req, res) {
   res.send(projectData);
 }
 
-// Callback function to complete GET '/all'
-app.get('/all', getData);
-
-function getData(req, res) {
-  res.send(projectData);
-}
-
-// Setup Server
-const port = 3000;
-const server = app.listen(port, listening);
-
-function listening() {
-    console.log("The Weather-Journal Server is running, my dudes!"); 
-    console.log(`Using localhost: ${port}`);
-};

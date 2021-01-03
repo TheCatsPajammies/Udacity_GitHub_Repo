@@ -36,7 +36,7 @@ const getWeather = async (weatherURL, zipCode, apiKey) => {
   // res equals the result of fetch function
   const res = await fetch(weatherURL + zipCode + apiKey);
   try {
-    // clientData equals the result of fetch function
+    // set clientData equal to the res of the fetch function
     const clientData = await res.json();
     return clientData;
   } catch (error) {
