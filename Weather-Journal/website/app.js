@@ -5,7 +5,7 @@ const weatherURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '&appid=7df24cf86819600a46e06c0ae48b5484';
 
 //Get the date
-// I commented out default date because it doesn't refresh in session - any reason for that?
+// I commented out the default date because it doesn't refresh in session - any reason for that?
 // let d = new Date();
 // let newDate = String((d.getMonth() + 1)).padStart(2, "0") + '/' + String(d.getDate()).padStart(2, "0") + '/' + d.getFullYear() + ' @ ' + String(d.getHours()).padStart(2, "0") + ':' + String(d.getMinutes()).padStart(2, "0");
 
@@ -22,8 +22,8 @@ function performAction(e) {
   getWeather(weatherURL, zipCode, apiKey)
     .then(function (clientData) {
       // add data to the POST request
-      console.log(clientData)
-      console.log(Date())
+      console.log(clientData);
+      console.log(Date());
       postData('/add', { date: Date(), temp: clientData.main.temp, content })
     }).then(function () {
       // call updateUI and update client side content
@@ -63,7 +63,7 @@ const postData = async (url = '', data = {}) => {
     return tempData;
   }
   catch (error) {
-    console.log(error);
+    console.log("error", error);
   }
 };
 
