@@ -28,9 +28,9 @@ function performAction(e) {
       console.log(clientData);
       console.log(Date());
       postData('/add', { date: Date(), temp: clientData.main.temp, content })
-    }).then(function () {
-      updateUI();
-    })
+    }).then(() => {
+        updateUI();
+      })
 }
 
 /* Function to GET Web API Data*/
