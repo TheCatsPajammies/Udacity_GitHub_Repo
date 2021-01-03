@@ -72,7 +72,7 @@ const updateUI = async () => {
   const request = await fetch('/all');
   try {
     const entryData = await request.json()
-    // updates the new entry values
+    // updates the new entry values into the browser
     document.getElementById('date').innerHTML = entryData.date;
     document.getElementById('temp').innerHTML = entryData.temp;
     document.getElementById('content').innerHTML = entryData.content;
