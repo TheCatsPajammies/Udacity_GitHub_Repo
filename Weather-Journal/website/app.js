@@ -26,7 +26,7 @@ function performAction(e) {
       console.log(Date());
       postData('/add', { date: Date(), temp: clientData.main.temp, content })
     }).then(function () {
-      // call updateUI and update client side content
+      // call updateUI to update client side content
       updateUI();
     })
 }
@@ -72,7 +72,7 @@ const updateUI = async () => {
   const request = await fetch('/all');
   try {
     const entryData = await request.json()
-    // updates the new entry values into the browser
+    // updates the new entry values into the browser according to elementID
     document.getElementById('date').innerHTML = entryData.date;
     document.getElementById('temp').innerHTML = entryData.temp;
     document.getElementById('content').innerHTML = entryData.content;
