@@ -13,30 +13,32 @@ const apiKey = '&appid=7df24cf86819600a46e06c0ae48b5484';
 document.getElementById('generate').addEventListener('click', performAction);
 
 /* Function called by event listener */
+
+// get user input values from the forms
+// add data to the POST request
+// call updateUI to update client side content
+
 function performAction(e) {
   e.preventDefault();
-  // get user input values from the forms
   const zipCode = document.getElementById('zip').value;
   const content = document.getElementById('feelings').value;
 
   getWeather(weatherURL, zipCode, apiKey)
     .then(function (clientData) {
-      // add data to the POST request
       console.log(clientData);
       console.log(Date());
       postData('/add', { date: Date(), temp: clientData.main.temp, content })
     }).then(function () {
-      // call updateUI to update client side content
       updateUI();
     })
 }
 
 /* Function to GET Web API Data*/
+// res equals the result of fetch function
+// set clientData equal to the res of the fetch function
 const getWeather = async (weatherURL, zipCode, apiKey) => {
-  // res equals the result of fetch function
   const res = await fetch(weatherURL + zipCode + apiKey);
   try {
-    // set clientData equal to the res of the fetch function
     const clientData = await res.json();
     return clientData;
   } catch (error) {
@@ -67,12 +69,11 @@ const postData = async (url = '', data = {}) => {
   }
 };
 
-
+// updates the new entry values into the browser according to elementID
 const updateUI = async () => {
   const request = await fetch('/all');
   try {
     const entryData = await request.json()
-    // updates the new entry values into the browser according to elementID
     document.getElementById('date').innerHTML = entryData.date;
     document.getElementById('temp').innerHTML = entryData.temp;
     document.getElementById('content').innerHTML = entryData.content;
