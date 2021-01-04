@@ -1,10 +1,12 @@
 /* Global Variables */
 
 // Base URL and API Key for OpenWeatherMap API
+//added units=metric to end of apiKey variable/string.
 const weatherURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '&appid=7df24cf86819600a46e06c0ae48b5484&units=metric';
 
 //Get the date
+// Added + 1 to get month because it returns a 0 if I use the default code.
 let d = new Date();
 let newDate = (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getFullYear();
 
@@ -74,7 +76,7 @@ const updateUI = async () => {
   try {
     const entryData = await request.json()
     document.getElementById('date').innerHTML = entryData.date;
-    document.getElementById('temp').innerHTML = entryData.temp + " Celsius";
+    document.getElementById('temp').innerHTML = entryData.temp;
     document.getElementById('content').innerHTML = entryData.content;
   }
   catch (error) {
